@@ -1,0 +1,2 @@
+class BaiViet < ApplicationRecord
+end

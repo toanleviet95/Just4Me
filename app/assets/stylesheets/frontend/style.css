@@ -1377,6 +1377,9 @@ p.lom{
 	line-height: 23px;
 	width:80%;
 }
+.height_auto{
+	height: 250px;
+}
 /*-- tutorials --*/
 @media (max-width: 1440px)
 {

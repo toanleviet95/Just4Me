@@ -4,7 +4,30 @@
 	<div class="container">
 		<div class="content-text">	
 			<div class="title">
+			<% @bai_viets.each do |bai_viet| %>
 				<div class="some-title">
+					<h3><a href=""><%= bai_viet.tieu_de %></a></h3>
+				</div>
+				<div class="john">
+					<p><a href="#"><%= bai_viet.tac_gia %></a><span><%= bai_viet.ngay_dang %></span></p>
+				</div>
+				<div class="clearfix"> </div>
+				<div class="tilte-grid">
+					<a href=""><%= image_tag bai_viet.hinh_anh, class: "img-responsive height_auto" %></a>
+					<p class="vel"><a href="single.html"><%= bai_viet.tom_tat %>
+					</a></p>
+					<p class="Sed">
+					<%= bai_viet.noi_dung[0..255] %>...
+					</p> 
+				</div>
+				<div class="read">
+					<a href="single.html">Chi tiết</a>
+				</div>
+				<div class="border">
+					
+				</div>
+			<% end %>
+				<!-- <div class="some-title">
 					<h3><a href="single.html">Some Tittle Goes Here</a></h3>
 				</div>
 				<div class="john">
@@ -79,7 +102,7 @@
 						<a href="#">Next</a>
 					</div>
 					<div class="clearfix"> </div>
-				</div>
+				</div> -->
 			</div>
 			<div class="categories">
 				<div class="categ">
@@ -92,19 +115,6 @@
 							<li><a href="single.html">Donec at pretium dui</a></li>
 							<li><a href="single.html">Nulla sed massa sagittis venenatis</a></li>
 							<li><a href="single.html">Praesent nec tortor nec massa</a></li>
-						</ul>
-					</div>
-					<div class="recent-com">
-						<h3>Recent Comments</h3>
-						<ul>
-							<li><a href="single.html">Donec consequat</a> suscipit leo at accumsan. In hac habitasse platea dictumst.</li>
-							<li><a href="single.html">Aliquam erat ipsum,</a> consequat id venenatis suscipit, venenatis sed leo.
-								Ut nec lacus in sem eleifend semper id ac dolor.</li>
-							<li><a href="single.html">Etiam aliquet convallis enim ut 
-									<span>Donec at pretium dui</span></a></li>
-							<li><a href="single.html">Nulla sed massa sagittis</a> venenatis Praesent nec tortor nec massa </li>
-							<li><a href="single.html">Donec faucibus mollis dolor
-								<span>in ullamcorper.</span></a></li>
 						</ul>
 					</div>
 					<div class="view">
