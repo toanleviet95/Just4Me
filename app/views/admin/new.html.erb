@@ -1,0 +1,57 @@
+<div class="box col-md-12" ng-controller="cap_nhat_thong_tin_ctrl as ctrl">
+    <div class="box-inner">
+        <div class="box-header well" data-original-title="">
+            <h2><i class="glyphicon glyphicon-plus"></i> Thêm bài viết</h2>
+        </div>
+        <div class="box-content">
+            <form name="myForm" role="form">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="form-group">
+                            <label for="TieuDe">Tiêu đề</label>
+                            <input name="TieuDe" type="text" class="form-control" id="TieuDe" required='required'>
+                        </div>
+<!--                         <div class="form-group" ng-class="ctrl.kiem_tra_hoten">
+                            <label for="HoTen">Họ tên</label>
+                            <input name="HoTen" type="text" class="form-control" id="HoTen" required='required' ng-pattern="/^[a-zA-ZáàảãạăắằẳẵặâấầẩẫậéèẻẽẹêếềểễệíìỉĩịóòỏõọôốồổỗộơớờởỡợúùủũụưứừửữựđĐÁÀẢÃẠĂẮẰẲẴẶÂẤẦẨẪẬÉÈẺẼẸÊẾỀỂỄỆÍÌỈĨỊÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢÚÙỦŨỤƯỨỪỬỮỰ ]+$/" ng-model="ctrl.sinh_vien.ho_ten" placeholder="Nguyễn Văn A">
+                        </div>
+                        <div class="form-group">
+                            <label for="NgaySinh">Ngày sinh</label>
+                            <input type="date" class="form-control" id="NgaySinh" required='required' ng-model="ctrl.sinh_vien.ngay_sinh">
+                        </div>
+                        <div class="form-group">
+                            <label for="NoiSinh">Nơi sinh</label>
+                            <input type="text" class="form-control" id="NoiSinh" required='required' placeholder="TP.HCM" ng-model="ctrl.sinh_vien.noi_sinh">
+                        </div>
+                        <div class="form-group">
+                            <label for="DiaChi">Địa chỉ</label>
+                            <input type="text" class="form-control" id="DiaChi" required='required' placeholder="Số nhà, Đường, Quận/Huyện, Tỉnh/Thành phố" ng-model="ctrl.sinh_vien.dia_chi">
+                        </div>
+                        <div class="form-group" ng-class="ctrl.kiem_tra_dienthoai">
+                            <label for="DienThoai">Điện thoại</label>
+                            <input name="DienThoai" type="text" class="form-control" id="DienThoai" required='required' placeholder="0938239553" ng-pattern='/^[+]?[0-9]+$/' ng-model="ctrl.sinh_vien.dien_thoai">
+                        </div> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="form-group" ng-class="ctrl.kiem_tra_tinhtrang">
+                            <label for="TinhTrang">Tình trạng</label>
+                            <select class="form-control" id="TinhTrang" ng-model="ctrl.sinh_vien.tinh_trang">
+                                <option value="-1">Kỷ luật</option>
+                                <option value="0">Thôi học</option>
+                                <option value="1">Đang học</option>
+                                <option value="2">Tốt nghiệp</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="center-block">
+                    <a href="/admin" class="btn btn-info"><i class="glyphicon glyphicon-chevron-left glyphicon-white"></i> Back</a>
+                    <button type="submit" class="btn btn-success">Thêm</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

@@ -10,16 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161001200915) do
+ActiveRecord::Schema.define(version: 20161002114549) do
 
   create_table "bai_viets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string  "tieu_de"
     t.string  "tom_tat"
-    t.text    "noi_dung",  limit: 65535
+    t.text    "noi_dung",     limit: 65535
     t.string  "hinh_anh"
-    t.integer "tac_gia"
+    t.integer "tai_khoan_id"
     t.integer "the_loai"
     t.date    "ngay_dang"
+  end
+
+  create_table "tai_khoans", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+    t.string "username"
+    t.string "password"
+  end
+
+  create_table "the_loais", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+    t.string "ten_the_loai"
   end
 
 end

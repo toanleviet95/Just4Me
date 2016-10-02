@@ -1380,6 +1380,29 @@ p.lom{
 .height_auto{
 	height: 250px;
 }
+.input_navbar{
+	width:150px;
+	height: 20px;
+}
+.submit_style{
+	font-size: 15px;
+    font-style: italic;
+    font-family: arial;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #ECE8D7;
+    background: #5B4F33;
+    text-decoration: none;
+    transition: .5s all;
+    -webkit-transition: .5s all;
+    -moz-transition: .5s all;
+    -o-transition: .5s all;
+    -ms-transition: .5s all;
+    border: none;
+}
+.form_style{
+	height: 21px;
+}
 /*-- tutorials --*/
 @media (max-width: 1440px)
 {

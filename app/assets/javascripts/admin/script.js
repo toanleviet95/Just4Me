@@ -197,7 +197,7 @@ function docReady() {
         responsive: true,
         columnDefs: [
             { targets: 2, orderable: false},
-            { responsivePriority: 1, targets: 1 },
+            { responsivePriority: 1, targets: 0 },
             { orderable: false, responsivePriority: 2, targets: -1 }
         ]
     });

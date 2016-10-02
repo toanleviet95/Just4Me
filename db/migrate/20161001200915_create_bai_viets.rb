@@ -5,9 +5,11 @@ class CreateBaiViets < ActiveRecord::Migration[5.0]
       t.string :tom_tat
       t.text :noi_dung
       t.string :hinh_anh
-      t.integer :tac_gia
-      t.integer :the_loai
+      t.integer :tai_khoan_id
+      t.integer :the_loai_id
       t.date :ngay_dang
     end
+    add_index :bai_viets, :tac_gia
+    add_index :bai_viets, :the_loai
   end
 end

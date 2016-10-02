@@ -4,7 +4,7 @@
             <h2><i class="glyphicon glyphicon-user"></i> Quản lý bài viết</h2>
         </div>
         <div class="box-content">
-            <a style="margin-bottom: 5px" class="btn btn-xs btn-success" href="them-sinh-vien">
+            <a style="margin-bottom: 5px" class="btn btn-xs btn-success" href="/admin/new">
                 <i class="glyphicon glyphicon-plus icon-white"></i>
                 Thêm
             </a>
@@ -21,24 +21,26 @@
                 </tr>
                 </thead>
                 <tbody>
+                <% @bai_viets.each do |bai_viet| %>
                 <tr>
-                	<td>1</td>
-                    <td>Tiêu đề</td>
-                    <td>Hình ảnh</td>
-                    <td>Thể loại</td>
-                    <td>Tác giả</td>
-                    <td>Ngày đăng</td>
+                	<td><%= bai_viet.id %></td>
+                    <td><%= bai_viet.tieu_de %></td>
+                    <td><%= image_tag bai_viet.hinh_anh, class: "img-responsive height_auto" %></td>
+                    <td><%= bai_viet.the_loai.ten_the_loai %></td>
+                    <td><%= bai_viet.tai_khoan.username %></td>
+                    <td><%= bai_viet.ngay_dang %></td>
                     <td>
                         <a class="btn btn-xs btn-info" href="cap-nhat-sinh-vien/{{sinh_vien.id}}">
                             <i class="glyphicon glyphicon-edit icon-white"></i>
                             Cập nhật
                         </a>
-                        <a class="btn btn-xs btn-danger" ng-click="ctrl.xoa(sinh_vien.id)">
+                        <a class="btn btn-xs btn-danger">
                             <i class="glyphicon glyphicon-trash icon-white"></i>
                             Xóa
                         </a>
                     </td>
                 </tr>
+                <% end %>
                 <!-- <tr ng-repeat="sinh_vien in ctrl.ds_sinh_vien">
                     <td ng-bind="sinh_vien.mssv"></td>
                     <td ng-bind="sinh_vien.ho_ten"></td>

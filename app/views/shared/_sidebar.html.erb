@@ -1,0 +1,16 @@
+<div class="categories">
+				<div class="categ">
+					<div class="cat">
+						<h3>Thể loại</h3>
+						<% the_loais = TheLoai.all %>
+						<ul>
+							<% the_loais.each do |the_loai| %>
+								<li><a href=""><%= the_loai.ten_the_loai %></a></li>
+							<% end %>
+						</ul>
+					</div>
+					<div class="view">
+						<a href="single.html">View More</a>
+					</div>
+				</div>
+			</div>

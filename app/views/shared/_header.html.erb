@@ -9,7 +9,19 @@
 				<span class="menu"><%= image_tag "menu.png" %></span>
 				<ul class="nav1">
 					<li class="cap"><a href="/trang-chu"><i class="glyphicon glyphicon-home"></i></a></li>
-					<li><a href="/dang-nhap">Login</a></li>
+					<li>
+						<form action="/tai-khoan/login" method="post" class="form_style">
+							<input class="input_navbar" value="Username" type="text" name="username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}">&nbsp;
+							<input class="input_navbar" value="Password" type="password" name="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
+							<button class="submit_style" type="submit">Login</button>
+						</form>
+					</li>
+					<li>
+						<form action="" method="post" class="form_style">
+							<input class="input_navbar" value="Tiêu đề" type="text" name="key" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Tiêu đề';}">
+							<button class="submit_style" type="submit">Search</button>
+						</form>
+					</li>
 				</ul>
 			</div>
 			<div class="clearfix"> </div>
