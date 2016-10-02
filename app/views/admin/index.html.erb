@@ -1,0 +1,104 @@
+<div class="box col-md-12">
+    <div class="box-inner">
+        <div class="box-header well" data-original-title="">
+            <h2><i class="glyphicon glyphicon-user"></i> Quản lý bài viết</h2>
+        </div>
+        <div class="box-content">
+            <a style="margin-bottom: 5px" class="btn btn-xs btn-success" href="them-sinh-vien">
+                <i class="glyphicon glyphicon-plus icon-white"></i>
+                Thêm
+            </a>
+            <table id="tblBaiViet" class="table table-striped table-bordered nowrap" cellspacing="0" width="100%">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tiêu đề</th>
+                    <th>Hình ảnh</th>
+                    <th>Thể loại</th>
+                    <th>Tác giả</th>
+                    <th>Ngày đăng</th>
+                    <th>Tùy chỉnh</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                	<td>1</td>
+                    <td>Tiêu đề</td>
+                    <td>Hình ảnh</td>
+                    <td>Thể loại</td>
+                    <td>Tác giả</td>
+                    <td>Ngày đăng</td>
+                    <td>
+                        <a class="btn btn-xs btn-info" href="cap-nhat-sinh-vien/{{sinh_vien.id}}">
+                            <i class="glyphicon glyphicon-edit icon-white"></i>
+                            Cập nhật
+                        </a>
+                        <a class="btn btn-xs btn-danger" ng-click="ctrl.xoa(sinh_vien.id)">
+                            <i class="glyphicon glyphicon-trash icon-white"></i>
+                            Xóa
+                        </a>
+                    </td>
+                </tr>
+                <!-- <tr ng-repeat="sinh_vien in ctrl.ds_sinh_vien">
+                    <td ng-bind="sinh_vien.mssv"></td>
+                    <td ng-bind="sinh_vien.ho_ten"></td>
+                    <td ng-bind="sinh_vien.ngay_sinh"></td>
+                    <td ng-bind="sinh_vien.noi_sinh"></td>
+                    <td ng-bind="sinh_vien.ten_khoa_hoc"></td>
+                    <td ng-bind="sinh_vien.ten_he_dao_tao"></td>
+                    <td ng-bind="sinh_vien.ten_chuyen_nganh"></td>
+                    <td>
+                        <span class="label-success label label-default" ng-if="sinh_vien.tinh_trang == 1">Đang học</span>
+                        <span class="label-danger label label-default" ng-if="sinh_vien.tinh_trang == 0">Thôi học</span>
+                        <span class="label-warning label label-default" ng-if="sinh_vien.tinh_trang == 2">Tốt nghiệp</span>
+                    </td>
+                    <td ng-bind="sinh_vien.ngay_nhap_hoc"></td>
+                    <td ng-bind="sinh_vien.dia_chi"></td>
+                    <td ng-bind="sinh_vien.dien_thoai"></td>
+                    <td ng-bind="sinh_vien.email"></td>
+                    <td ng-bind="sinh_vien.cmnd"></td>
+                    <td>
+                        <input ng-if="sinh_vien.doan_vien == 1" type="checkbox" checked disabled/>
+                        <input ng-if="sinh_vien.doan_vien == 0" type="checkbox" disabled/>
+                    </td>
+                    <td>
+                        <input ng-if="sinh_vien.dang_vien == 1" type="checkbox" checked disabled/>
+                        <input ng-if="sinh_vien.dang_vien == 0" type="checkbox" disabled/>
+                    </td>
+                    <td>
+                        <a class="btn btn-xs btn-warning" ng-click="ctrl.chi_tiet(sinh_vien.id)">
+                            <i class="glyphicon glyphicon-zoom-in icon-white"></i>
+                            Chi tiết
+                        </a>
+                        <a class="btn btn-xs btn-info" href="cap-nhat-sinh-vien/{{sinh_vien.id}}">
+                            <i class="glyphicon glyphicon-edit icon-white"></i>
+                            Sửa
+                        </a>
+                        <a class="btn btn-xs btn-danger" ng-click="ctrl.xoa(sinh_vien.id)">
+                            <i class="glyphicon glyphicon-trash icon-white"></i>
+                            Xóa
+                        </a>
+                    </td>
+                </tr> -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="modal fade" id="XoaModal" tabindex="-1" role="dialog" aria-labelledby="XoaModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h3>Hệ thống</h3>
+                </div>
+                <div class="modal-body">
+                    <p>Bạn có muốn xóa thông tin này ?</p>
+                </div>
+                <div class="modal-footer">
+                    <a id="btnXoa" href="#" class="btn btn-info" data-dismiss="modal">Đồng ý</a>
+                    <a href="#" class="btn btn-danger" data-dismiss="modal">Đóng</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

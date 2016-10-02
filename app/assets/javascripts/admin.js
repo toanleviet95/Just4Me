@@ -10,5 +10,5 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require_tree ./frontend/jquery
-//= require_tree ./frontend
+//= require_tree ./admin/jquery
+//= require_tree ./admin

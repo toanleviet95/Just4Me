@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ADMIN</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <%= stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_include_tag 'admin', 'data-turbolinks-track': 'reload' %>
+
+    <!-- The fav icon -->
+    <link rel="shortcut icon" href="frontend/assets/img/favicon.ico">
+
+</head>
+
+<body>
+<%= render "shared/navbar_admin" %>
+<div class="ch-container">
+    <div class="row">
+        <%= render "shared/sidebar_admin" %>
+        <div id="content" class="col-lg-10 col-sm-10">
+            <div class="row">
+                <%= yield %>
+            </div>
+        </div><!--/#content.col-md-0-->
+    </div><!--/fluid-row-->
+    <%= render "shared/footer_admin" %>
+</div><!--/.fluid-container-->
+</body>
+</html>
