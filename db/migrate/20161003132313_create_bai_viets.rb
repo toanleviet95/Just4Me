@@ -9,7 +9,5 @@ class CreateBaiViets < ActiveRecord::Migration[5.0]
       t.integer :the_loai_id
       t.date :ngay_dang
     end
-    add_index :bai_viets, :tai_khoan
-    add_index :bai_viets, :the_loai
   end
 end
