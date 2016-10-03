@@ -7,6 +7,14 @@ Danh sách sinh viên:
 
 URL: **https://just4mevt.herokuapp.com/**
 
+## Lưu ý
+Tài khoản admin đăng nhập để viết blog:
+Username: **toanleviet**
+Password: **123456**
+Hoặc
+Username: **tuongvi**
+Password: **123456**
+
 ## Chức năng
 
 Danh sách chức năng **bắt buộc**:
