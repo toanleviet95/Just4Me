@@ -2,8 +2,6 @@
 
 one:
   ten: MyString
-  noi_dung: MyText
 
 two:
   ten: MyString
-  noi_dung: MyText
