@@ -8,6 +8,10 @@ class AdminController < ApplicationController
   	end
   end
   def new
-
+  	@the_loais = TheLoai.all
+  end
+  def edit
+  	@bai_viet = BaiViet.find(params[:id])
+  	@the_loais = TheLoai.all
   end
 end

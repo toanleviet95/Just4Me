@@ -1403,6 +1403,9 @@ p.lom{
 .form_style{
 	height: 21px;
 }
+.comments-info:nth-child(3) {
+     margin-left: 0; 
+}
 /*-- tutorials --*/
 @media (max-width: 1440px)
 {

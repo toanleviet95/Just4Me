@@ -7,7 +7,7 @@
 					<h3><%= @bai_viet.tieu_de %></h3>
 				</div>
 				<div class="john">
-					<p><a href=""><%= @bai_viet.tai_khoan.username %></a><span><%= @bai_viet.ngay_dang %></span></p>
+					<p><a href=""><%= @bai_viet.tai_khoan.username %></a><span><%= @bai_viet.ngay_dang.strftime("%m/%d/%Y") %></span></p>
 				</div>
 				<div class="clearfix"> </div>
 				<div class="tilte-grid">
@@ -16,7 +16,7 @@
 						<%= @bai_viet.tom_tat %>
 					</p>
 					<p class="Sed">
-						<%= @bai_viet.noi_dung %>
+						<%= markdown(@bai_viet.noi_dung) %>
 					</p> 
 				</div>
 				<div class="related-posts">
@@ -35,61 +35,29 @@
 			<%= render "shared/sidebar" %>
 			<div class="clearfix"> </div>
 			<div class="comments">
-					<h4>Comments</h4>
+					<h4>Nhận xét (<%= @nhan_xets.count %>)</h4>
+					<% @nhan_xets.each do |nhan_xet| %>
 					<div class="comments-info">
 						<div class="cmnt-icon-left">
-							<a href="#"><img src="images/icon3.png" alt=""/></a>
+							<a href="#"><%= image_tag 'icon3.png', class: "img-responsive" %></a>
 						</div>
 						<div class="cmnt-icon-right">
-							<p>MAY 13, 2015</p>
-							<p><a href="#">Admin</a></p>
-							<p class="cmmnt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-							sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							<p><%= nhan_xet.ngay_tao.strftime("%m/%d/%Y") %></p>
+							<p><a href=""><%= nhan_xet.ten %></a></p>
+							<p class="cmmnt">
+								<%= markdown(nhan_xet.noi_dung) %>
+							</p>
 						</div>
 						<div class="clearfix"> </div>
-						<div class="aliqua">
-							<a href="#">Reply</a>
-						</div>
 					</div>
-					<div class="comments-info">
-						<div class="cmnt-icon-left">
-							<a href="#"><img src="images/icon3.png" alt=""/></a>
-						</div>
-						<div class="cmnt-icon-right">
-							<p>MAY 13, 2015</p>
-							<p><a href="#">Admin</a></p>
-							<p class="cmmnt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-							sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						</div>
-						<div class="clearfix"> </div>
-						<div class="aliqua">
-							<a href="#">Reply</a>
-						</div>
-					</div>
-					<div class="comments-info">
-						<div class="cmnt-icon-left">
-							<a href="#"><img src="images/icon3.png" alt=""/></a>
-						</div>
-						<div class="cmnt-icon-right">
-							<p>MAY 13, 2015</p>
-							<p><a href="#">Admin </a></p>
-							<p class="cmmnt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-							sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						</div>
-						<div class="clearfix"> </div>
-						<div class="aliqua">
-							<a href="#">Reply</a>
-						</div>
-					</div>
+					<% end %>
 				</div>
 			<div class="consequat">
-				<h4>Leave Your Comment Here</h4>
-				<form>
-					<input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
-					<input type="email" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
-					<input type="text" value="Subject" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Subject';}" required="">
-					<textarea type="text"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message...';}" required="">Message...</textarea>
-					<input type="submit" value="Submit" >
+				<h4>Nhận xét của bạn</h4>
+				<form method="post" action="/nhan-xet/create/<%= @bai_viet.id %>">
+					<input type="text" name="HoTen" value="Họ tên..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Họ tên...';}" required>
+					<textarea type="text" name="NoiDung"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Bình luận của bạn...';}" required>Bình luận của bạn...</textarea>
+					<input type="submit" value="Đăng bình luận" >
 				</form>
 			</div>
 		</div>

@@ -9,15 +9,15 @@
 					<h3><a href="/bai-viet/<%= bai_viet.id %>"><%= bai_viet.tieu_de %></a></h3>
 				</div>
 				<div class="john">
-					<p><a href="/bai-viet/<%= bai_viet.id %>"><%= bai_viet.tai_khoan.username %></a><span><%= bai_viet.ngay_dang %></span></p>
+					<p><a href="/bai-viet/<%= bai_viet.id %>"><%= bai_viet.tai_khoan.username %></a><span><%= bai_viet.ngay_dang.strftime("%m/%d/%Y") %></span></p>
 				</div>
 				<div class="clearfix"> </div>
 				<div class="tilte-grid">
-					<a href=""><%= image_tag bai_viet.hinh_anh, class: "img-responsive height_auto" %></a>
+					<a href="/bai-viet/<%= bai_viet.id %>"><%= image_tag bai_viet.hinh_anh, class: "img-responsive height_auto" %></a>
 					<p class="vel"><a href="single.html"><%= bai_viet.tom_tat %>
 					</a></p>
 					<p class="Sed">
-					<%= bai_viet.noi_dung[0..255] %>...
+					<%= markdown(bai_viet.noi_dung[0..255]) %>...
 					</p> 
 				</div>
 				<div class="read">

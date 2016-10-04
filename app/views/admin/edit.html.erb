@@ -1,0 +1,54 @@
+<div class="box col-md-12" ng-controller="cap_nhat_thong_tin_ctrl as ctrl">
+    <div class="box-inner">
+        <div class="box-header well" data-original-title="">
+            <h2><i class="glyphicon glyphicon-plus"></i> Cập nhật bài viết</h2>
+        </div>
+        <div class="box-content">
+            <form name="myForm" role="form" method="post" action="/bai-viet/update/<%= @bai_viet.id %>">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="form-group">
+                            <label for="TieuDe">Tiêu đề</label>
+                            <input name="TieuDe" type="text" class="form-control" id='TieuDe' value='<%= @bai_viet.tieu_de %>' required='required'>
+                        </div>
+                        <div class="form-group">
+                            <label for="TomTat">Tóm tắt</label><br/>
+                            <textarea class="form-control" name="TomTat" id="TomTat" required='required'><%= @bai_viet.tom_tat %></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <div class="form-group">
+                            <label for="TheLoai">Thể loại</label>
+                            <select class="form-control" name="TheLoai" id="TheLoai">
+                                <% @the_loais.each do |the_loai| %>
+                                    <% if(@bai_viet.the_loai_id == the_loai.id) %>
+                                        <option value="<%= the_loai.id %>" selected><%= the_loai.ten_the_loai %></option>
+                                    <% else %>
+                                        <option value="<%= the_loai.id %>"><%= the_loai.ten_the_loai %></option>
+                                    <% end %>
+                                <% end %>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="form-group">
+                            <label for="NoiDung">Nội dung</label><br/>
+                            <%= text_area_tag :NoiDung, @bai_viet.noi_dung, :class => "tinymce", :rows => 20 %>
+                            <%= tinymce %>
+                        </div>
+                    </div>
+                </div>
+                <div class="center-block">
+                    <a href="/admin" class="btn btn-info"><i class="glyphicon glyphicon-chevron-left glyphicon-white"></i> Back</a>
+                    <button type="submit" class="btn btn-success">Cập nhật</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+<%= tinymce_assets %>
